@@ -1,0 +1,38 @@
+Internal ctest changing into directory: /home/hyy/clickhouse-repro-offline/20261009T111810Z-7c90c00a/build
+UpdateCTestConfiguration  from :/home/hyy/clickhouse-repro-offline/20261009T111810Z-7c90c00a/build/DartConfiguration.tcl
+UpdateCTestConfiguration  from :/home/hyy/clickhouse-repro-offline/20261009T111810Z-7c90c00a/build/DartConfiguration.tcl
+Test project /home/hyy/clickhouse-repro-offline/20261009T111810Z-7c90c00a/build
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 1
+    Start 1: persist
+
+1: Test command: /home/hyy/clickhouse-repro-offline/20261009T111810Z-7c90c00a/build/offline_tests "create" "/home/hyy/clickhouse-repro-offline/20261009T111810Z-7c90c00a/build/fixtures"
+1: Working Directory: /home/hyy/clickhouse-repro-offline/20261009T111810Z-7c90c00a/build
+1: Test timeout computed to be: 120
+1: PASS mode=create datasets=25 queries=0 seed=20260930
+1/3 Test #1: persist ..........................   Passed    0.01 sec
+test 2
+    Start 2: reload_and_query
+
+2: Test command: /home/hyy/clickhouse-repro-offline/20261009T111810Z-7c90c00a/build/offline_tests "verify" "/home/hyy/clickhouse-repro-offline/20261009T111810Z-7c90c00a/build/fixtures"
+2: Working Directory: /home/hyy/clickhouse-repro-offline/20261009T111810Z-7c90c00a/build
+2: Test timeout computed to be: 120
+2: PASS mode=verify datasets=25 queries=12975 seed=20260930
+2/3 Test #2: reload_and_query .................   Passed    0.20 sec
+test 3
+    Start 3: invalid_inputs
+
+3: Test command: /home/hyy/clickhouse-repro-offline/20261009T111810Z-7c90c00a/build/failure_tests "/home/hyy/clickhouse-repro-offline/20261009T111810Z-7c90c00a/build/invalid-fixtures"
+3: Working Directory: /home/hyy/clickhouse-repro-offline/20261009T111810Z-7c90c00a/build
+3: Test timeout computed to be: 120
+3: PASS invalid inputs, aggregate modes, overflow and corruption
+3/3 Test #3: invalid_inputs ...................   Passed    0.00 sec
+
+100% tests passed, 0 tests failed out of 3
+
+Total Test time (real) =   0.21 sec

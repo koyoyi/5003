@@ -1,0 +1,53 @@
+if(EXISTS "${ROOT}")
+  message(FATAL_ERROR "Use a fresh CLI fixture directory")
+endif()
+file(MAKE_DIRECTORY "${ROOT}")
+file(WRITE "${ROOT}/input.tsv" "row_id\tkey\tvalue\r\n3\t7\t3\r\n1\t7\t2\r\n2\t9\t10\r\n0\t-1\t-4\r\n")
+
+function(invoke expected_status expected_output)
+  execute_process(COMMAND "${EXECUTABLE}" "${ROOT}/catalog" ${ARGN}
+    RESULT_VARIABLE status OUTPUT_VARIABLE output ERROR_VARIABLE error TIMEOUT 10)
+  if(expected_status STREQUAL "success")
+    if(NOT status EQUAL 0 OR NOT error STREQUAL "" OR NOT output MATCHES "${expected_output}")
+      message(FATAL_ERROR "Unexpected success result: ${status}\n${output}\n${error}")
+    endif()
+  else()
+    if(status EQUAL 0 OR NOT error MATCHES "FAIL:")
+      message(FATAL_ERROR "Expected explicit failure: ${status}\n${output}\n${error}")
+    endif()
+  endif()
+endfunction()
+
+invoke(success "\"created\":\"demo\"" --execute "CREATE TABLE demo;")
+invoke(success "\"state\":\"created\"" --execute "DESCRIBE demo;")
+invoke(failure "" --execute "SELECT COUNT(*), SUM(value) FROM demo WHERE key = 7;")
+invoke(success "\"imported\":\"demo\"" --execute "IMPORT demo FROM '${ROOT}/input.tsv' GRANULE 2;")
+invoke(success "\"rows\":4,\"granule\":2,\"groups\":2" --execute "DESCRIBE demo;")
+invoke(success "\"count\":2,\"sum\":5,\"scanned_rows\":4," --execute
+  "SELECT COUNT(*), SUM(value) FROM demo WHERE key = 7 USING FULL;")
+invoke(success "\"count\":2,\"sum\":5,\"scanned_rows\":4," --execute
+  "SELECT COUNT(*), SUM(value) FROM demo WHERE key = 7 USING INDEX;")
+invoke(success "\"candidate_groups\":1.*\"estimated_scanned_rows\":2," --execute
+  "EXPLAIN SELECT COUNT(*), SUM(value) FROM demo WHERE key = 9;")
+invoke(success "\"count\":1,\"sum\":10,\"scanned_rows\":2," --execute
+  "SELECT COUNT(*), SUM(value) FROM demo WHERE key = 9;")
+invoke(failure "" --execute "IMPORT demo FROM '${ROOT}/input.tsv' GRANULE 2;")
+invoke(failure "" --execute "CREATE TABLE invalid; SHOW TABLES;")
+invoke(failure "" --execute "SELECT COUNT(*), SUM(value) FROM demo WHERE key = 1 garbage;")
+file(WRITE "${ROOT}/commands.sql"
+  "CREATE TABLE second;\nSHOW TABLES;\nEXPLAIN SELECT COUNT(*), SUM(value) FROM demo WHERE key >= 7 AND key < 10 USING FULL;\n")
+invoke(success "\"tables\":\\[\"demo\",\"second\"\\]" --file "${ROOT}/commands.sql")
+file(WRITE "${ROOT}/stdin.sql" "SHOW TABLES;\nDESCRIBE second;\n")
+execute_process(COMMAND "${EXECUTABLE}" "${ROOT}/catalog" INPUT_FILE "${ROOT}/stdin.sql"
+  RESULT_VARIABLE status OUTPUT_VARIABLE output ERROR_VARIABLE error TIMEOUT 10)
+if(NOT status EQUAL 0 OR NOT error STREQUAL "" OR NOT output MATCHES "\"state\":\"created\"")
+  message(FATAL_ERROR "stdin batch failed: ${status}\n${output}\n${error}")
+endif()
+invoke(failure "" --execute "")
+invoke(failure "" --file "${ROOT}/missing.sql")
+file(WRITE "${ROOT}/bad-script.sql" "CREATE TABLE not_published;\nDROP TABLE demo;")
+invoke(failure "" --file "${ROOT}/bad-script.sql")
+if(EXISTS "${ROOT}/catalog/not_published")
+  message(FATAL_ERROR "Syntax-invalid batch partially executed")
+endif()
+message(STATUS "PASS database CLI lifecycle, fresh processes, failures, script and stdin")

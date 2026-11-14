@@ -1,0 +1,101 @@
+{
+  "e1_suite": "20261009T112101Z-178093fc",
+  "version": "24.6.1.4423",
+  "settings": [
+    [
+      "count_distinct_implementation",
+      "uniqExact"
+    ],
+    [
+      "log_queries",
+      "1"
+    ],
+    [
+      "max_execution_time",
+      "60"
+    ],
+    [
+      "max_insert_threads",
+      "2"
+    ],
+    [
+      "max_memory_usage",
+      "3221225472"
+    ],
+    [
+      "max_threads",
+      "2"
+    ],
+    [
+      "use_query_cache",
+      "0"
+    ]
+  ],
+  "parts": [
+    [
+      "all_1_62_5",
+      1000000,
+      123
+    ]
+  ],
+  "schema": [
+    [
+      "CREATE TABLE mechanism.rows\n(\n    `row_id` UInt64,\n    `key` Int64,\n    `value` Int64\n)\nENGINE = MergeTree\nPRIMARY KEY key\nORDER BY (key, row_id)\nSETTINGS index_granularity = 8192, index_granularity_bytes = 0"
+    ]
+  ],
+  "records": [
+    {
+      "query_name": "narrow",
+      "query_id": "7632a468-bacf-46d0-b3d8-0acd17bd6fdf",
+      "dataset_sha256": "34e7452748a95f18896fee784f3d169483a9f29bc5bf33e13a6155400bd78586",
+      "dataset_rows": 1000000,
+      "result_count": 1000,
+      "result_sum": 1621,
+      "read_rows": 16384,
+      "read_bytes": 262144,
+      "query_duration_ms": 2,
+      "validation_status": "passed",
+      "row_ids_validated": true
+    },
+    {
+      "query_name": "medium",
+      "query_id": "634c4334-faef-4579-9c29-7ce17b177b1f",
+      "dataset_sha256": "34e7452748a95f18896fee784f3d169483a9f29bc5bf33e13a6155400bd78586",
+      "dataset_rows": 1000000,
+      "result_count": 100000,
+      "result_sum": 8282,
+      "read_rows": 114688,
+      "read_bytes": 1835008,
+      "query_duration_ms": 3,
+      "validation_status": "passed",
+      "row_ids_validated": true
+    },
+    {
+      "query_name": "near_full",
+      "query_id": "5dca1ce3-2afc-4c86-a07b-991e82c441af",
+      "dataset_sha256": "34e7452748a95f18896fee784f3d169483a9f29bc5bf33e13a6155400bd78586",
+      "dataset_rows": 1000000,
+      "result_count": 990000,
+      "result_sum": -16263,
+      "read_rows": 991232,
+      "read_bytes": 15859712,
+      "query_duration_ms": 9,
+      "validation_status": "passed",
+      "row_ids_validated": true
+    },
+    {
+      "query_name": "non_key",
+      "query_id": "7e9b6af8-678a-4e5b-bf83-66b062ffac5a",
+      "dataset_sha256": "34e7452748a95f18896fee784f3d169483a9f29bc5bf33e13a6155400bd78586",
+      "dataset_rows": 1000000,
+      "result_count": 54580,
+      "result_sum": 5185617,
+      "read_rows": 1000000,
+      "read_bytes": 8000000,
+      "query_duration_ms": 20,
+      "validation_status": "passed",
+      "row_ids_validated": true
+    }
+  ],
+  "interpretation": "Native server statistics only; no C++ versus ClickHouse absolute speed claim."
+}

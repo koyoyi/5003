@@ -1,0 +1,8 @@
+test_benchmark_protocol (__main__.CliTests.test_benchmark_protocol) ... ok
+test_build_reload_query_output (__main__.CliTests.test_build_reload_query_output) ... ok
+test_invalid_commands_and_inputs (__main__.CliTests.test_invalid_commands_and_inputs) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.072s
+
+OK

@@ -1,0 +1,14 @@
+{
+  "generator_version": 1,
+  "seed": 20260930,
+  "dataset_rows": [100000, 1000000],
+  "granule_rows": [512, 2048, 8192],
+  "target_match_ratios": ["0.001", "0.01", "0.1", "1"],
+  "warmup_runs": 1,
+  "measurement_runs": 5,
+  "cache_protocol": "process-preloaded-index; correctness-validation-before-warmup; OS-page-cache-not-cleared",
+  "timing_scope": "candidate-location+seek+buffered-column-read+predicate+checked-aggregation; excludes-process-start+initial-open+index-load+row-id-collection+logging",
+  "value_min": -100,
+  "value_max": 100,
+  "key_distribution": "four-rows-per-integer-key; shuffled-input"
+}

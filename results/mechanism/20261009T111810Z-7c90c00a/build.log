@@ -1,0 +1,9 @@
+[ 33%] Building CXX object CMakeFiles/offline_tests.dir/tests/offline_tests.cpp.o
+[ 33%] Building CXX object CMakeFiles/mini_index.dir/src/main.cpp.o
+[ 50%] Linking CXX executable mini_index
+[ 50%] Built target mini_index
+[ 66%] Building CXX object CMakeFiles/failure_tests.dir/tests/failure_tests.cpp.o
+[ 83%] Linking CXX executable offline_tests
+[ 83%] Built target offline_tests
+[100%] Linking CXX executable failure_tests
+[100%] Built target failure_tests

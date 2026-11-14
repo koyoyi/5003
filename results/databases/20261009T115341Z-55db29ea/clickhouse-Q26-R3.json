@@ -1,0 +1,46 @@
+{
+  "record": {
+    "status": "success",
+    "elapsed_s": 0.007076445000166132,
+    "observed_elapsed_s": 0.007076445000166132,
+    "server_elapsed_s": 0.00541932,
+    "exit_code": 0,
+    "result_rows": 10,
+    "validation_status": "passed",
+    "error": "",
+    "server_query_id": "f5af020c-c81b-4bbf-878b-ab5008cc9bae",
+    "cancellation": null
+  },
+  "result": [
+    [
+      "'exis disco ryder injected cuda 7269"
+    ],
+    [
+      "'kbnyjuj gjhnf gtgthm vfibys row 3 \u0441\u0442\u0430\u0432\u0435"
+    ],
+    [
+      "'kbnyjuj gjhnf gtgthm vfibys row 3 \u0441\u0442\u0430\u0432\u0435"
+    ],
+    [
+      "'kbnyst exfcnm vekmnbdfhrf"
+    ],
+    [
+      "'kbnyst exfcnm vekmnbdfhrf"
+    ],
+    [
+      "(http://kommedium=cpc&utm_source=main \u043f\u0440\u043e\u0438\u0441\u0445\u043e\u0434"
+    ],
+    [
+      "+100 \u0434\u0438\u0437\u0435\u043b\u044c\u043a\u0430\u0442\u0440\u043e\u0432\u0441\u043a\u0438\u0439 \u0441\u0442\u043e\u0439"
+    ],
+    [
+      "+100 \u0434\u0438\u0437\u0435\u043b\u044c\u043a\u0430\u0442\u0440\u043e\u0432\u0441\u043a\u0438\u0439 \u0441\u0442\u043e\u0439"
+    ],
+    [
+      "+100500 4.5 \u043e\u0442\u0437\u044b\u0432\u044b"
+    ],
+    [
+      "+100500 4.5 \u043e\u0442\u0437\u044b\u0432\u044b"
+    ]
+  ]
+}

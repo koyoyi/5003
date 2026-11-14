@@ -1,0 +1,51 @@
+{
+  "organized_at_utc": "2026-11-14T10:22:40.808750+00:00",
+  "source_directory_unchanged": true,
+  "imported_files": 1538,
+  "historical_result_files_preserved": 1503,
+  "core_cpp_source_files_unchanged": 5,
+  "modified_imported_files": [
+    {
+      "path": "mini-index/CMakeLists.txt",
+      "import_sha256": "fe2d00300d265496c3429dcc6a939a393dfcf8b0b9a9bf2ce55340f3d1bd1791",
+      "current_sha256": "2181eb0b18de143a9837d25c153802d7cdf01d7020f031a61265ee0017a6bc5f"
+    },
+    {
+      "path": "mini-index/README.md",
+      "import_sha256": "84e9fe241fcc8ef50b7565fef311c4bfdbf936d0f004b45d56d0e150012aec66",
+      "current_sha256": "64a8bcdcbda200d185017f533d796af4fc689bfd5144268fbc4aa5ea978a2857"
+    },
+    {
+      "path": "scripts/database_support.py",
+      "import_sha256": "8be5a14446d3fa993dbfd450a377740d274fb38e5b60805dc97cb1aab52239a1",
+      "current_sha256": "e64cb79b967006577d93509cd2afee41f057c5aa12b126220cc48760997cb5ba"
+    },
+    {
+      "path": "scripts/run_databases.py",
+      "import_sha256": "c168f93cafe2de513d2934b78493f3a92fda4e807be159431dc7308115304ddf",
+      "current_sha256": "cf4dcbca6131eaf9c37ec4265ac6d7fde8133814d0a4f5c8f7dbd82d11fa79a2"
+    },
+    {
+      "path": "scripts/run_mechanism.py",
+      "import_sha256": "212dec735d624cc4c67b25acec3af0bce7f29127abc3aadc82f714300983502e",
+      "current_sha256": "412d77ad4e75a283cc3ee6f0c731aaabcdbb0d785447ba38092aa0f9f0dbeacc"
+    },
+    {
+      "path": "scripts/validate_databases.py",
+      "import_sha256": "ec130a6f47ebe19172f238781dac97e4289b6dd2c935b8161201fa71f4af81fc",
+      "current_sha256": "c25f031ff1c66cefd0cb3387e0c0cacacb68238de8b206c1d00d64182273a1f7"
+    }
+  ],
+  "json_configs_valid": true,
+  "python_files_syntax_checked": 12,
+  "documentation_links_checked": 10,
+  "local_verification": "build/project-check/20261114T102157777588Z/verification.json",
+  "verification_status": "passed",
+  "passed_checks": 9,
+  "limitations": [
+    "Historical E1 suite 20261009T111810Z-7c90c00a: old artifact format without artifact_sha256; retained and covered by import SHA-256 checks",
+    "Historical E1 suite 20261009T111933Z-b2609f36: old artifact format without artifact_sha256; retained and covered by import SHA-256 checks",
+    "Optional database-driver regression; use --database-checks after installing requirements-databases.txt"
+  ],
+  "scope": "Project organization and offline verification; no new database experiment or performance measurement; no Git commit or publication."
+}

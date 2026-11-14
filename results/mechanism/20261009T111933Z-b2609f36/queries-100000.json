@@ -1,0 +1,34 @@
+[
+  {
+    "query_id": 1,
+    "target_match_ratio": "0.001",
+    "lower_bound": 12487,
+    "upper_bound": 12512,
+    "expected_count": 100,
+    "expected_sum": -801
+  },
+  {
+    "query_id": 2,
+    "target_match_ratio": "0.01",
+    "lower_bound": 12375,
+    "upper_bound": 12625,
+    "expected_count": 1000,
+    "expected_sum": -95
+  },
+  {
+    "query_id": 3,
+    "target_match_ratio": "0.1",
+    "lower_bound": 11250,
+    "upper_bound": 13750,
+    "expected_count": 10000,
+    "expected_sum": 3576
+  },
+  {
+    "query_id": 4,
+    "target_match_ratio": "1",
+    "lower_bound": 0,
+    "upper_bound": 25000,
+    "expected_count": 100000,
+    "expected_sum": 17338
+  }
+]

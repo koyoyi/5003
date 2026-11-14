@@ -1,0 +1,8 @@
+{
+  "source": "https://github.com/ClickHouse/ClickBench",
+  "license": "CC BY-NC-SA 4.0",
+  "files": {
+    "ClickBench-LICENSE.txt": "9d42e8bf72619767ff7534116151204a976a4894a5082ed45db977e63360e215",
+    "CLICKBENCH-NOTICE.txt": "a00d13409f4b939b384a9ffa77f416cbbac4a1a999d280bb029261dcab789fe0"
+  }
+}

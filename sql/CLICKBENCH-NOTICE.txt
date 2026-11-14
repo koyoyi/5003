@@ -1,0 +1,21 @@
+Third-party workload attribution
+
+Source: ClickHouse/ClickBench and its contributors
+Repository: https://github.com/ClickHouse/ClickBench
+Frozen revision: 0e662eafd608343698a2f63cd84d0d878eefbc7b
+Upstream license: Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
+License URL: https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+The original workload SQL is copied from the frozen repository. Adapted SQL
+is distributed under the same CC BY-NC-SA 4.0 terms for this non-commercial
+academic reproduction. Per-query and schema changes are recorded in each
+database's adaptations.json, alongside both original and modified SQL.
+Changes include deterministic ordering and explicit cross-engine semantic
+normalization. These adapted runs are not official ClickBench scoreboard runs.
+
+The complete upstream license is included beside this notice as
+ClickBench-LICENSE.txt. Preserve attribution, license and modification notices
+when sharing the copied or adapted workload.
+
+This notice covers the third-party workload and its SQL adaptations; it is
+not a blanket license declaration for the independently written mini-index.

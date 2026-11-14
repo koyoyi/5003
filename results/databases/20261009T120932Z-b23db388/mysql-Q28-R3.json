@@ -1,0 +1,30 @@
+{
+  "record": {
+    "status": "success",
+    "elapsed_s": 1.0648128770000085,
+    "observed_elapsed_s": 1.0648128770000085,
+    "server_elapsed_s": null,
+    "exit_code": 0,
+    "result_rows": 2,
+    "validation_status": "passed",
+    "error": "",
+    "server_query_id": null,
+    "cancellation": null
+  },
+  "result": [
+    [
+      62,
+      {
+        "decimal": "92.810918968034"
+      },
+      413812
+    ],
+    [
+      38,
+      {
+        "decimal": "73.967979597062"
+      },
+      507770
+    ]
+  ]
+}

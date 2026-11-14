@@ -1,0 +1,372 @@
+{
+  "schema": [],
+  "queries": [
+    {
+      "query_id": 1,
+      "sql": "SELECT COUNT(*) FROM hits",
+      "reasons": [],
+      "original_sha256": "7412de9d0a7fa51f232f175eb01e04a73785090c2894dd306ac1b6e4ea5e4fb8",
+      "query_sha256": "9427a481e342c1da21a6a49bba4004f6bc72e52016514f3892596ec879e33c39"
+    },
+    {
+      "query_id": 2,
+      "sql": "SELECT COUNT(*) FROM hits WHERE AdvEngineID <> 0",
+      "reasons": [],
+      "original_sha256": "0b954a25b966999f51ab9879b1d64c1abe443f30ad8302cb37ff525c4296daee",
+      "query_sha256": "0bae986eb7e395a5197920aba79b18f762900cabedb2e0c2dac8a2bcca6b3f0f"
+    },
+    {
+      "query_id": 3,
+      "sql": "SELECT SUM(AdvEngineID), COUNT(*), AVG(ResolutionWidth) FROM hits",
+      "reasons": [],
+      "original_sha256": "4f0a83e44df82cac3c0f2fc6ac84a79136404ec6f509c528eb399c81b6784089",
+      "query_sha256": "ba789a7fdd20673d5a1de18603f6241b5abe66edc985128790e53ebd504a323a"
+    },
+    {
+      "query_id": 4,
+      "sql": "SELECT AVG(UserID) FROM hits",
+      "reasons": [],
+      "original_sha256": "94fcadd8f43c74fae381e941d388765b0831db04f834bba7d29772744119d3c4",
+      "query_sha256": "7a41406a2ec8d4563146920aaaeb5e23a9f96e51c4a8642b7fa1c225d79b4d71"
+    },
+    {
+      "query_id": 5,
+      "sql": "SELECT COUNT(DISTINCT UserID) FROM hits",
+      "reasons": [],
+      "original_sha256": "f08d52380a0e521591828b758874e2eb73965a98a7283bbbad7a8c5c0b0f6d1a",
+      "query_sha256": "8ebb700400efe6ab27baaef96502aa9149de0f5c4135d50e8bdc65c423890406"
+    },
+    {
+      "query_id": 6,
+      "sql": "SELECT COUNT(DISTINCT SearchPhrase) FROM hits",
+      "reasons": [],
+      "original_sha256": "97a507d4fd581b2948c05056256da098569a96999864e4b283ca80176c91aa8a",
+      "query_sha256": "fca8498cf063ef5e2ce1eb9f6dd82e17f7448c7a956c04d7b4e583c767520561"
+    },
+    {
+      "query_id": 7,
+      "sql": "SELECT MIN(EventDate), MAX(EventDate) FROM hits",
+      "reasons": [],
+      "original_sha256": "4d3c90aa8ef032c018cfa8a0a5141c1e34c9353169e49982b7db06b0447c03b6",
+      "query_sha256": "08f216fc8d03ab96c3559be63da4081f58662224c3798008aee3ac1ab1abb919"
+    },
+    {
+      "query_id": 8,
+      "sql": "SELECT AdvEngineID, COUNT(*) FROM hits WHERE AdvEngineID <> 0 GROUP BY AdvEngineID ORDER BY COUNT(*) DESC, AdvEngineID",
+      "reasons": [
+        "Deterministic secondary sort for tied rows/TOP-K, including offset boundaries."
+      ],
+      "original_sha256": "8e005cb0f598476fb343a88c7f21aa59a50a0b1f40df5656d1cd3631ea611ec6",
+      "query_sha256": "a3da10c70c508329d7f5d799f7810673d412b37c123b981e943ec81bd37e3e59"
+    },
+    {
+      "query_id": 9,
+      "sql": "SELECT RegionID, COUNT(DISTINCT UserID) AS u FROM hits GROUP BY RegionID ORDER BY u DESC, RegionID LIMIT 10",
+      "reasons": [
+        "Deterministic secondary sort for tied rows/TOP-K, including offset boundaries."
+      ],
+      "original_sha256": "6df1314fd14204a7d30f1e2477f7961a2522f3fff949ddd9c63b01667a02b881",
+      "query_sha256": "a9294cc7de33ad56a2b940686e613e447b0fea6129c9e75e2372ac228f3be274"
+    },
+    {
+      "query_id": 10,
+      "sql": "SELECT RegionID, SUM(AdvEngineID), COUNT(*) AS c, AVG(ResolutionWidth), COUNT(DISTINCT UserID) FROM hits GROUP BY RegionID ORDER BY c DESC, RegionID LIMIT 10",
+      "reasons": [
+        "Deterministic secondary sort for tied rows/TOP-K, including offset boundaries."
+      ],
+      "original_sha256": "1d926dc106c7c8b97f2f18bb4ffc6e2c2eddb49cd9f7fe7388110d45dbaccd72",
+      "query_sha256": "df4cb623990147f053495af887b9c65d818b66ea7c56f3b7b78cc9d85cf54451"
+    },
+    {
+      "query_id": 11,
+      "sql": "SELECT MobilePhoneModel, COUNT(DISTINCT UserID) AS u FROM hits WHERE MobilePhoneModel <> '' GROUP BY MobilePhoneModel ORDER BY u DESC, MobilePhoneModel LIMIT 10",
+      "reasons": [
+        "Deterministic secondary sort for tied rows/TOP-K, including offset boundaries."
+      ],
+      "original_sha256": "3466c76d1bc529188c0f92081709c19d24785b0eecf4b1f67524721f3e6219b2",
+      "query_sha256": "ff71870b54446ffe5bda228b4f04ae1f07dc8e3403b30f53f1677043e1fe3688"
+    },
+    {
+      "query_id": 12,
+      "sql": "SELECT MobilePhone, MobilePhoneModel, COUNT(DISTINCT UserID) AS u FROM hits WHERE MobilePhoneModel <> '' GROUP BY MobilePhone, MobilePhoneModel ORDER BY u DESC, MobilePhone, MobilePhoneModel LIMIT 10",
+      "reasons": [
+        "Deterministic secondary sort for tied rows/TOP-K, including offset boundaries."
+      ],
+      "original_sha256": "cc9256e7e5ca07318a7562dbe2adae4c57f9b322aa8c696c9c64d8f02bd62701",
+      "query_sha256": "ba65687b318391882a1b069a908756db982a34e915a5bf429fb23c5f59e87ec1"
+    },
+    {
+      "query_id": 13,
+      "sql": "SELECT SearchPhrase, COUNT(*) AS c FROM hits WHERE SearchPhrase <> '' GROUP BY SearchPhrase ORDER BY c DESC, SearchPhrase LIMIT 10",
+      "reasons": [
+        "Deterministic secondary sort for tied rows/TOP-K, including offset boundaries."
+      ],
+      "original_sha256": "9ed884e06110bf4073c446d66f998791f10a351ff9dbcd89d9aa43bcf7cadc68",
+      "query_sha256": "21b6ed2303b206113fe0aeed3b37e56256dd85e5899963cde8074c1bc14ddd33"
+    },
+    {
+      "query_id": 14,
+      "sql": "SELECT SearchPhrase, COUNT(DISTINCT UserID) AS u FROM hits WHERE SearchPhrase <> '' GROUP BY SearchPhrase ORDER BY u DESC, SearchPhrase LIMIT 10",
+      "reasons": [
+        "Deterministic secondary sort for tied rows/TOP-K, including offset boundaries."
+      ],
+      "original_sha256": "862c4315ee7b469cc441e233bf5c7e538fd8595ccbe741636a7e7cb11de35895",
+      "query_sha256": "38df6ea0e3239e15e9dbd35fd74ccbb30afbe608c5eed3d4f4252b021967f19e"
+    },
+    {
+      "query_id": 15,
+      "sql": "SELECT SearchEngineID, SearchPhrase, COUNT(*) AS c FROM hits WHERE SearchPhrase <> '' GROUP BY SearchEngineID, SearchPhrase ORDER BY c DESC, SearchEngineID, SearchPhrase LIMIT 10",
+      "reasons": [
+        "Deterministic secondary sort for tied rows/TOP-K, including offset boundaries."
+      ],
+      "original_sha256": "21f4e918643f952dfc23cb2413edceed988cd1a3c4b6d3d8b7c8b0adf456cf47",
+      "query_sha256": "47586772edd30326bdd8528649a9e4af0c21b34d2d64c95c6c9c3bc4498d1a5e"
+    },
+    {
+      "query_id": 16,
+      "sql": "SELECT UserID, COUNT(*) FROM hits GROUP BY UserID ORDER BY COUNT(*) DESC, UserID LIMIT 10",
+      "reasons": [
+        "Deterministic secondary sort for tied rows/TOP-K, including offset boundaries."
+      ],
+      "original_sha256": "a2511c640a5c2d2693b705ac28b08896e1f9e06dd6697e4f2a9b5d0e270c0d2c",
+      "query_sha256": "0edf6577f1f13a82c14d7448377073ad110dad1ced12269948216ea8a77b799f"
+    },
+    {
+      "query_id": 17,
+      "sql": "SELECT UserID, SearchPhrase, COUNT(*) FROM hits GROUP BY UserID, SearchPhrase ORDER BY COUNT(*) DESC, UserID, SearchPhrase LIMIT 10",
+      "reasons": [
+        "Deterministic secondary sort for tied rows/TOP-K, including offset boundaries."
+      ],
+      "original_sha256": "93449e58f04fa9b0b65559f4808d4f76a9dacde93cf57267475b1a0ed1b3c8ef",
+      "query_sha256": "dcf2b13d01a5c70a604535b2b8951d244fa52a8c5febb4970a5f5866a7886465"
+    },
+    {
+      "query_id": 18,
+      "sql": "SELECT UserID, SearchPhrase, COUNT(*) FROM hits GROUP BY UserID, SearchPhrase ORDER BY UserID, SearchPhrase LIMIT 10",
+      "reasons": [
+        "Freeze the otherwise unspecified grouped LIMIT output; changes sorting cost."
+      ],
+      "original_sha256": "a794a1834894a8634dec53076578c67070fdb2a475fea6127ba4e0ab32dc2817",
+      "query_sha256": "4c8bf39bf7b6cbc8749a69d0130c7c6df85c774d540f9fa7cc9e0f978a72a8f8"
+    },
+    {
+      "query_id": 19,
+      "sql": "SELECT UserID, extract(minute FROM EventTime) AS m, SearchPhrase, COUNT(*) FROM hits GROUP BY UserID, m, SearchPhrase ORDER BY COUNT(*) DESC, UserID, m, SearchPhrase LIMIT 10",
+      "reasons": [
+        "Deterministic secondary sort for tied rows/TOP-K, including offset boundaries."
+      ],
+      "original_sha256": "beb03b125b8ab7f6caa1f0611cb6948cf469373265d08d10424970184af351d1",
+      "query_sha256": "20126f91c70550b9960d5f1f696aededc5f252c37e7ce346049d90bab14204bf"
+    },
+    {
+      "query_id": 20,
+      "sql": "SELECT UserID FROM hits WHERE UserID = 435090932899640449",
+      "reasons": [],
+      "original_sha256": "f31258287e523d8f99728196d416e84b1fffa3ba55674bcbcaa368acbeebe96a",
+      "query_sha256": "92b71f998052ddb0b3a21ddb5144c1a18520ebb30a02fe54becc125331f9c28a"
+    },
+    {
+      "query_id": 21,
+      "sql": "SELECT COUNT(*) FROM hits WHERE URL LIKE '%google%'",
+      "reasons": [],
+      "original_sha256": "03f6f2ed644d68a241a777535331b60735ea4109e03a5c3ac7d17481cf81a004",
+      "query_sha256": "25375542cc4f63a54ac63e3b0b229700ef84435dd47a3cd0b60efd043f44ab8b"
+    },
+    {
+      "query_id": 22,
+      "sql": "SELECT SearchPhrase, MIN(URL), COUNT(*) AS c FROM hits WHERE URL LIKE '%google%' AND SearchPhrase <> '' GROUP BY SearchPhrase ORDER BY c DESC, SearchPhrase LIMIT 10",
+      "reasons": [
+        "Deterministic secondary sort for tied rows/TOP-K, including offset boundaries."
+      ],
+      "original_sha256": "da76d5dbccea5ea39ae4a58e0f77510f512d777c1542ef9705226ea24805e978",
+      "query_sha256": "2aa76a8c0f142b1703f4a845a747e75fcc11d83855b02bfcc2df19f87e4022cc"
+    },
+    {
+      "query_id": 23,
+      "sql": "SELECT SearchPhrase, MIN(URL), MIN(Title), COUNT(*) AS c, COUNT(DISTINCT UserID) FROM hits WHERE Title LIKE '%Google%' AND URL NOT LIKE '%.google.%' AND SearchPhrase <> '' GROUP BY SearchPhrase ORDER BY c DESC, SearchPhrase LIMIT 10",
+      "reasons": [
+        "Deterministic secondary sort for tied rows/TOP-K, including offset boundaries."
+      ],
+      "original_sha256": "3ee5b50515692a5773d67ca98eb5698f7abda8878fbb8494fe2b7340b3c6cb3e",
+      "query_sha256": "c2bb38ad0f11fc6b3a0dd9528c38ddddc075111a013f9fe075329c279bc64f32"
+    },
+    {
+      "query_id": 24,
+      "sql": "SELECT * FROM hits WHERE URL LIKE '%google%' ORDER BY EventTime, CounterID, EventDate, UserID, WatchID LIMIT 10",
+      "reasons": [
+        "Deterministic secondary sort for tied rows/TOP-K, including offset boundaries."
+      ],
+      "original_sha256": "4f32584ea081100ce9ee58193d62ce1a128b3be34a43ba3a12028b52aec4e3ac",
+      "query_sha256": "1d210d19823f41762f6f7cc4f439741431610c496c9a428df75c185cfed85899"
+    },
+    {
+      "query_id": 25,
+      "sql": "SELECT SearchPhrase FROM hits WHERE SearchPhrase <> '' ORDER BY EventTime, SearchPhrase LIMIT 10",
+      "reasons": [
+        "Deterministic secondary sort for tied rows/TOP-K, including offset boundaries."
+      ],
+      "original_sha256": "7d1413e4d2dd07e409f909b91266b72b536a6bc81e47ebbde0b9255347153d61",
+      "query_sha256": "73cc4a26f72f54f21fae00c1e737d0e8e6eb6dee49b80522683ce8380f05cbde"
+    },
+    {
+      "query_id": 26,
+      "sql": "SELECT SearchPhrase FROM hits WHERE SearchPhrase <> '' ORDER BY SearchPhrase LIMIT 10",
+      "reasons": [],
+      "original_sha256": "84a44a78b7c5ef6d7ee87bcb4aded0ff34108b5f3752871169561af2fd304cf9",
+      "query_sha256": "ee1d0c5f3c338ad18ec977387f88ac71df24a0baa9f186083a02316d729b1c8a"
+    },
+    {
+      "query_id": 27,
+      "sql": "SELECT SearchPhrase FROM hits WHERE SearchPhrase <> '' ORDER BY EventTime, SearchPhrase LIMIT 10",
+      "reasons": [],
+      "original_sha256": "8c56a9f793fb96e14ea1e76fbacbd6680f267291779576c46c9b2b19a75228e7",
+      "query_sha256": "73cc4a26f72f54f21fae00c1e737d0e8e6eb6dee49b80522683ce8380f05cbde"
+    },
+    {
+      "query_id": 28,
+      "sql": "SELECT CounterID, AVG(CHAR_LENGTH(URL)) AS l, COUNT(*) AS c FROM hits WHERE URL <> '' GROUP BY CounterID HAVING COUNT(*) > 100000 ORDER BY l DESC, CounterID LIMIT 25",
+      "reasons": [
+        "Deterministic secondary sort for tied rows/TOP-K, including offset boundaries.",
+        "Unicode character length, not UTF-8 byte length."
+      ],
+      "original_sha256": "47f093a15d260f04f2a496d390c1548b080a75cc1ef713b5ff57db2c04dde5b1",
+      "query_sha256": "26e985415d8ff37378f7eb45ed84785f8f9965a49d09c6e6fd4a4947ea3d9a23"
+    },
+    {
+      "query_id": 29,
+      "sql": "SELECT REGEXP_REPLACE(Referer, '(?s)^https?://(?:www\\.)?([^/]+)/.*$', '$1') AS k, AVG(CHAR_LENGTH(Referer)) AS l, COUNT(*) AS c, MIN(Referer) FROM hits WHERE Referer <> '' GROUP BY k HAVING COUNT(*) > 100000 ORDER BY l DESC, k LIMIT 25",
+      "reasons": [
+        "Deterministic secondary sort for tied rows/TOP-K, including offset boundaries.",
+        "Explicit dot-all matching: otherwise PostgreSQL and RE2/ICU differ on embedded newlines.",
+        "Unicode character length, not UTF-8 byte length.",
+        "ICU replacement backreference syntax; NO_BACKSLASH_ESCAPES preserves pattern."
+      ],
+      "original_sha256": "f9f54d5e0d6e237a4c788d6277bad076f0e11cbf126ae394c118b9f22efedb3e",
+      "query_sha256": "b3bb8bfb38baa3667b0008978f7631c94602c9a2a98f87f3b7f2c113b09480a5"
+    },
+    {
+      "query_id": 30,
+      "sql": "SELECT SUM(ResolutionWidth), SUM(ResolutionWidth + 1), SUM(ResolutionWidth + 2), SUM(ResolutionWidth + 3), SUM(ResolutionWidth + 4), SUM(ResolutionWidth + 5), SUM(ResolutionWidth + 6), SUM(ResolutionWidth + 7), SUM(ResolutionWidth + 8), SUM(ResolutionWidth + 9), SUM(ResolutionWidth + 10), SUM(ResolutionWidth + 11), SUM(ResolutionWidth + 12), SUM(ResolutionWidth + 13), SUM(ResolutionWidth + 14), SUM(ResolutionWidth + 15), SUM(ResolutionWidth + 16), SUM(ResolutionWidth + 17), SUM(ResolutionWidth + 18), SUM(ResolutionWidth + 19), SUM(ResolutionWidth + 20), SUM(ResolutionWidth + 21), SUM(ResolutionWidth + 22), SUM(ResolutionWidth + 23), SUM(ResolutionWidth + 24), SUM(ResolutionWidth + 25), SUM(ResolutionWidth + 26), SUM(ResolutionWidth + 27), SUM(ResolutionWidth + 28), SUM(ResolutionWidth + 29), SUM(ResolutionWidth + 30), SUM(ResolutionWidth + 31), SUM(ResolutionWidth + 32), SUM(ResolutionWidth + 33), SUM(ResolutionWidth + 34), SUM(ResolutionWidth + 35), SUM(ResolutionWidth + 36), SUM(ResolutionWidth + 37), SUM(ResolutionWidth + 38), SUM(ResolutionWidth + 39), SUM(ResolutionWidth + 40), SUM(ResolutionWidth + 41), SUM(ResolutionWidth + 42), SUM(ResolutionWidth + 43), SUM(ResolutionWidth + 44), SUM(ResolutionWidth + 45), SUM(ResolutionWidth + 46), SUM(ResolutionWidth + 47), SUM(ResolutionWidth + 48), SUM(ResolutionWidth + 49), SUM(ResolutionWidth + 50), SUM(ResolutionWidth + 51), SUM(ResolutionWidth + 52), SUM(ResolutionWidth + 53), SUM(ResolutionWidth + 54), SUM(ResolutionWidth + 55), SUM(ResolutionWidth + 56), SUM(ResolutionWidth + 57), SUM(ResolutionWidth + 58), SUM(ResolutionWidth + 59), SUM(ResolutionWidth + 60), SUM(ResolutionWidth + 61), SUM(ResolutionWidth + 62), SUM(ResolutionWidth + 63), SUM(ResolutionWidth + 64), SUM(ResolutionWidth + 65), SUM(ResolutionWidth + 66), SUM(ResolutionWidth + 67), SUM(ResolutionWidth + 68), SUM(ResolutionWidth + 69), SUM(ResolutionWidth + 70), SUM(ResolutionWidth + 71), SUM(ResolutionWidth + 72), SUM(ResolutionWidth + 73), SUM(ResolutionWidth + 74), SUM(ResolutionWidth + 75), SUM(ResolutionWidth + 76), SUM(ResolutionWidth + 77), SUM(ResolutionWidth + 78), SUM(ResolutionWidth + 79), SUM(ResolutionWidth + 80), SUM(ResolutionWidth + 81), SUM(ResolutionWidth + 82), SUM(ResolutionWidth + 83), SUM(ResolutionWidth + 84), SUM(ResolutionWidth + 85), SUM(ResolutionWidth + 86), SUM(ResolutionWidth + 87), SUM(ResolutionWidth + 88), SUM(ResolutionWidth + 89) FROM hits",
+      "reasons": [],
+      "original_sha256": "5933f7101e8578071f37d78e98374b806079b3ad6dbfc1a1a05d2db029d061e6",
+      "query_sha256": "9d3eea6a62feec2cd0bf3d388c00e1f3b93c901620a1d624f105d860edd1ab68"
+    },
+    {
+      "query_id": 31,
+      "sql": "SELECT SearchEngineID, ClientIP, COUNT(*) AS c, SUM(IsRefresh), AVG(ResolutionWidth) FROM hits WHERE SearchPhrase <> '' GROUP BY SearchEngineID, ClientIP ORDER BY c DESC, SearchEngineID, ClientIP LIMIT 10",
+      "reasons": [
+        "Deterministic secondary sort for tied rows/TOP-K, including offset boundaries."
+      ],
+      "original_sha256": "a9a277e2d02a2314b508716d857aa9d02685909272cf2487cf43cfecfa808c4a",
+      "query_sha256": "4fafbe2889842c8c56e63730c2bf0a998ad04f9d583531b44a4bcbb27fb1f5fc"
+    },
+    {
+      "query_id": 32,
+      "sql": "SELECT WatchID, ClientIP, COUNT(*) AS c, SUM(IsRefresh), AVG(ResolutionWidth) FROM hits WHERE SearchPhrase <> '' GROUP BY WatchID, ClientIP ORDER BY c DESC, WatchID, ClientIP LIMIT 10",
+      "reasons": [
+        "Deterministic secondary sort for tied rows/TOP-K, including offset boundaries."
+      ],
+      "original_sha256": "d347d85d9c9ed20c99ab9049e3bc4a560f50ca112e1f38731804dbaa462130d7",
+      "query_sha256": "0f04c8e3e9f8ddf7dbb937663597760c551d94e04abbd2f7c96ca29b4bc157c8"
+    },
+    {
+      "query_id": 33,
+      "sql": "SELECT WatchID, ClientIP, COUNT(*) AS c, SUM(IsRefresh), AVG(ResolutionWidth) FROM hits GROUP BY WatchID, ClientIP ORDER BY c DESC, WatchID, ClientIP LIMIT 10",
+      "reasons": [
+        "Deterministic secondary sort for tied rows/TOP-K, including offset boundaries."
+      ],
+      "original_sha256": "9716e4333d306e28288ae400aa314b7e075ce627be3d54bc256060d1d9da78a5",
+      "query_sha256": "37406d55b9472647a3a0e29e858159d0b554009eb96eab3d4c7527dc4f03f057"
+    },
+    {
+      "query_id": 34,
+      "sql": "SELECT URL, COUNT(*) AS c FROM hits GROUP BY URL ORDER BY c DESC, URL LIMIT 10",
+      "reasons": [
+        "Deterministic secondary sort for tied rows/TOP-K, including offset boundaries."
+      ],
+      "original_sha256": "77d4a9ab7da740b5c097696f5e89535f2ce7cdacbdfc210cf00d1f5e07e67944",
+      "query_sha256": "8ed58b797b53a3c358be5f5b0c49a9922c519aced7a9d151539978f70a569e4a"
+    },
+    {
+      "query_id": 35,
+      "sql": "SELECT 1, URL, COUNT(*) AS c FROM hits GROUP BY 1, URL ORDER BY c DESC, URL LIMIT 10",
+      "reasons": [
+        "Deterministic secondary sort for tied rows/TOP-K, including offset boundaries."
+      ],
+      "original_sha256": "9d5024bf38e61a674f689a9089ff71647ce82c8211c885014c5e82813a55df40",
+      "query_sha256": "b080ed8287bac38394eae3cfc2e7de74f61d4123a7a28ea513db5bc325587f11"
+    },
+    {
+      "query_id": 36,
+      "sql": "SELECT ClientIP, ClientIP - 1, ClientIP - 2, ClientIP - 3, COUNT(*) AS c FROM hits GROUP BY ClientIP, ClientIP - 1, ClientIP - 2, ClientIP - 3 ORDER BY c DESC, ClientIP LIMIT 10",
+      "reasons": [
+        "Deterministic secondary sort for tied rows/TOP-K, including offset boundaries."
+      ],
+      "original_sha256": "b5a6b55cccb5ee22c956d45d8b0530042f8462b307c9e0c78bb9f2382bdc5cb5",
+      "query_sha256": "aeffd2354be0bdcec13161da6ee3c9b444a4dde8170c6a554442d5da0a26efbd"
+    },
+    {
+      "query_id": 37,
+      "sql": "SELECT URL, COUNT(*) AS PageViews FROM hits WHERE CounterID = 62 AND EventDate >= '2013-07-01' AND EventDate <= '2013-07-31' AND DontCountHits = 0 AND IsRefresh = 0 AND URL <> '' GROUP BY URL ORDER BY PageViews DESC, URL LIMIT 10",
+      "reasons": [
+        "Deterministic secondary sort for tied rows/TOP-K, including offset boundaries."
+      ],
+      "original_sha256": "2c45a4e168ff8d1394f52ec0429ddf86ecf6a5cae759a909a93cf80aac6a418d",
+      "query_sha256": "5827c7220e023fb38c706ea0b2f21076b8b152ecd0ebaed0b742f56129577a7d"
+    },
+    {
+      "query_id": 38,
+      "sql": "SELECT Title, COUNT(*) AS PageViews FROM hits WHERE CounterID = 62 AND EventDate >= '2013-07-01' AND EventDate <= '2013-07-31' AND DontCountHits = 0 AND IsRefresh = 0 AND Title <> '' GROUP BY Title ORDER BY PageViews DESC, Title LIMIT 10",
+      "reasons": [
+        "Deterministic secondary sort for tied rows/TOP-K, including offset boundaries."
+      ],
+      "original_sha256": "19e2ae5be83bbd703cdf64f8e7d2db992d855ce000d423e48cef1fdc0fbd0c43",
+      "query_sha256": "d827a015dc80222f07251f2ad293035caa052d2ecc5365cbe171c25357f6a822"
+    },
+    {
+      "query_id": 39,
+      "sql": "SELECT URL, COUNT(*) AS PageViews FROM hits WHERE CounterID = 62 AND EventDate >= '2013-07-01' AND EventDate <= '2013-07-31' AND IsRefresh = 0 AND IsLink <> 0 AND IsDownload = 0 GROUP BY URL ORDER BY PageViews DESC, URL LIMIT 10 OFFSET 1000",
+      "reasons": [
+        "Deterministic secondary sort for tied rows/TOP-K, including offset boundaries."
+      ],
+      "original_sha256": "fe1335dcf694efc54b37cb3c7971cc4f7271c675ba91d00917a2e4d160d5febf",
+      "query_sha256": "aa24f4dc4a7018f4a49567da2bf3eb58bebf9bc659ecb65f34e4a4bcc2bcf88d"
+    },
+    {
+      "query_id": 40,
+      "sql": "SELECT TraficSourceID, SearchEngineID, AdvEngineID, CASE WHEN (SearchEngineID = 0 AND AdvEngineID = 0) THEN Referer ELSE '' END AS Src, URL AS Dst, COUNT(*) AS PageViews FROM hits WHERE CounterID = 62 AND EventDate >= '2013-07-01' AND EventDate <= '2013-07-31' AND IsRefresh = 0 GROUP BY TraficSourceID, SearchEngineID, AdvEngineID, Src, Dst ORDER BY PageViews DESC, TraficSourceID, SearchEngineID, AdvEngineID, Src, Dst LIMIT 10 OFFSET 1000",
+      "reasons": [
+        "Deterministic secondary sort for tied rows/TOP-K, including offset boundaries."
+      ],
+      "original_sha256": "afdb8338f83b3c7c391ff7fa51815d9d86850f86d2659a57506eac398a8716bd",
+      "query_sha256": "096ecc68a4538cbeca8167e1afc7ea7adfef5f18bb82a1e319852afb768f02c6"
+    },
+    {
+      "query_id": 41,
+      "sql": "SELECT URLHash, EventDate, COUNT(*) AS PageViews FROM hits WHERE CounterID = 62 AND EventDate >= '2013-07-01' AND EventDate <= '2013-07-31' AND IsRefresh = 0 AND TraficSourceID IN (-1, 6) AND RefererHash = 3594120000172545465 GROUP BY URLHash, EventDate ORDER BY PageViews DESC, URLHash, EventDate LIMIT 10 OFFSET 100",
+      "reasons": [
+        "Deterministic secondary sort for tied rows/TOP-K, including offset boundaries."
+      ],
+      "original_sha256": "c312c8cc5e8be9c803e96f7025907634b8581be1aa238359a0b208119bb0352b",
+      "query_sha256": "f25f7a839133325f11869614786cf3ae05601f39a1b872d9baba9ae6ac8069b8"
+    },
+    {
+      "query_id": 42,
+      "sql": "SELECT WindowClientWidth, WindowClientHeight, COUNT(*) AS PageViews FROM hits WHERE CounterID = 62 AND EventDate >= '2013-07-01' AND EventDate <= '2013-07-31' AND IsRefresh = 0 AND DontCountHits = 0 AND URLHash = 2868770270353813622 GROUP BY WindowClientWidth, WindowClientHeight ORDER BY PageViews DESC, WindowClientWidth, WindowClientHeight LIMIT 10 OFFSET 10000",
+      "reasons": [
+        "Deterministic secondary sort for tied rows/TOP-K, including offset boundaries."
+      ],
+      "original_sha256": "adc1cd2fd6cb8359dc7d2798f6cc727d0c10b5d25bcc8a214a53efbd7034b860",
+      "query_sha256": "b42075886e224bc967a69db94450db6e9c9e1c0c59099e82bb71aab906166361"
+    },
+    {
+      "query_id": 43,
+      "sql": "SELECT DATE_FORMAT(EventTime, '%Y-%m-%d %H:%i:00') AS M, COUNT(*) AS PageViews FROM hits WHERE CounterID = 62 AND EventDate >= '2013-07-14' AND EventDate <= '2013-07-15' AND IsRefresh = 0 AND DontCountHits = 0 GROUP BY DATE_FORMAT(EventTime, '%Y-%m-%d %H:%i:00') ORDER BY DATE_FORMAT(EventTime, '%Y-%m-%d %H:%i:00') LIMIT 10 OFFSET 1000",
+      "reasons": [
+        "Official MySQL query truncates to hour; align to minute in the other DBMS."
+      ],
+      "original_sha256": "472d3b65cf97bf007a8e4cd812e4eed7ee54e4291b2b32f42db180187d1f33e2",
+      "query_sha256": "012de19976866868a75a8062d18def1acfdeca99bf348289cd0a94d00cee5695"
+    }
+  ]
+}

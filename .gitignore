@@ -1,0 +1,31 @@
+# Rebuild locally; never import machine-specific build caches.
+/build/
+mini-index/build*/
+CMakeUserPresets.json
+compile_commands.json
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Local data, credentials and database volumes.
+/data/*
+!/data/README.md
+/volumes/
+.env
+*.env
+*.env.*
+!.env.example
+*.pem
+*.key
+*.parquet
+*.bin
+*.sqlite
+*.sqlite3
+*.db
+
+# Shared editor settings are part of the project; user settings are not.
+.vscode/*.local.json
+.idea/
+.DS_Store
+Thumbs.db

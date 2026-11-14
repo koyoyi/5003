@@ -1,0 +1,42 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "5003: configure",
+      "type": "process",
+      "command": "cmake",
+      "args": ["--preset", "native-release"],
+      "options": {"cwd": "${workspaceFolder}"},
+      "problemMatcher": []
+    },
+    {
+      "label": "5003: build",
+      "type": "process",
+      "command": "cmake",
+      "args": ["--build", "--preset", "native-release", "--parallel", "2"],
+      "options": {"cwd": "${workspaceFolder}"},
+      "dependsOn": "5003: configure",
+      "group": {"kind": "build", "isDefault": true},
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "5003: test C++",
+      "type": "process",
+      "command": "ctest",
+      "args": ["--preset", "native-release", "--output-on-failure"],
+      "options": {"cwd": "${workspaceFolder}"},
+      "dependsOn": "5003: build",
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "5003: verify offline",
+      "type": "process",
+      "command": "python",
+      "args": ["-B", "tools/check_project.py"],
+      "options": {"cwd": "${workspaceFolder}"},
+      "group": "test",
+      "problemMatcher": []
+    }
+  ]
+}

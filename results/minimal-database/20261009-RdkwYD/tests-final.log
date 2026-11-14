@@ -1,0 +1,62 @@
+Internal ctest changing into directory: /home/hyy/clickhouse-repro-offline/minimal-db-20261009-RdkwYD/build-final
+UpdateCTestConfiguration  from :/home/hyy/clickhouse-repro-offline/minimal-db-20261009-RdkwYD/build-final/DartConfiguration.tcl
+UpdateCTestConfiguration  from :/home/hyy/clickhouse-repro-offline/minimal-db-20261009-RdkwYD/build-final/DartConfiguration.tcl
+Test project /home/hyy/clickhouse-repro-offline/minimal-db-20261009-RdkwYD/build-final
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 1
+    Start 1: persist
+
+1: Test command: /home/hyy/clickhouse-repro-offline/minimal-db-20261009-RdkwYD/build-final/offline_tests "create" "/home/hyy/clickhouse-repro-offline/minimal-db-20261009-RdkwYD/build-final/fixtures"
+1: Working Directory: /home/hyy/clickhouse-repro-offline/minimal-db-20261009-RdkwYD/build-final
+1: Test timeout computed to be: 120
+1: PASS mode=create datasets=25 queries=0 seed=20260930
+1/6 Test #1: persist ..........................   Passed    0.01 sec
+test 2
+    Start 2: reload_and_query
+
+2: Test command: /home/hyy/clickhouse-repro-offline/minimal-db-20261009-RdkwYD/build-final/offline_tests "verify" "/home/hyy/clickhouse-repro-offline/minimal-db-20261009-RdkwYD/build-final/fixtures"
+2: Working Directory: /home/hyy/clickhouse-repro-offline/minimal-db-20261009-RdkwYD/build-final
+2: Test timeout computed to be: 120
+2: PASS mode=verify datasets=25 queries=12975 seed=20260930
+2/6 Test #2: reload_and_query .................   Passed    0.24 sec
+test 3
+    Start 3: invalid_inputs
+
+3: Test command: /home/hyy/clickhouse-repro-offline/minimal-db-20261009-RdkwYD/build-final/failure_tests "/home/hyy/clickhouse-repro-offline/minimal-db-20261009-RdkwYD/build-final/invalid-fixtures"
+3: Working Directory: /home/hyy/clickhouse-repro-offline/minimal-db-20261009-RdkwYD/build-final
+3: Test timeout computed to be: 120
+3: PASS invalid inputs, aggregate modes, overflow and corruption
+3/6 Test #3: invalid_inputs ...................   Passed    0.00 sec
+test 4
+    Start 4: database_create
+
+4: Test command: /home/hyy/clickhouse-repro-offline/minimal-db-20261009-RdkwYD/build-final/database_tests "create" "/home/hyy/clickhouse-repro-offline/minimal-db-20261009-RdkwYD/build-final/database-fixtures"
+4: Working Directory: /home/hyy/clickhouse-repro-offline/minimal-db-20261009-RdkwYD/build-final
+4: Test timeout computed to be: 120
+4: PASS catalog creation and imports
+4/6 Test #4: database_create ..................   Passed    0.00 sec
+test 5
+    Start 5: database_reload
+
+5: Test command: /home/hyy/clickhouse-repro-offline/minimal-db-20261009-RdkwYD/build-final/database_tests "verify" "/home/hyy/clickhouse-repro-offline/minimal-db-20261009-RdkwYD/build-final/database-fixtures"
+5: Working Directory: /home/hyy/clickhouse-repro-offline/minimal-db-20261009-RdkwYD/build-final
+5: Test timeout computed to be: 120
+5: PASS separate-process reload; 404 predicates, full/index SQL/oracle/EXPLAIN parity and failures
+5/6 Test #5: database_reload ..................   Passed    0.09 sec
+test 6
+    Start 6: database_cli
+
+6: Test command: /usr/bin/cmake "-DEXECUTABLE=/home/hyy/clickhouse-repro-offline/minimal-db-20261009-RdkwYD/build-final/mini_db" "-DROOT=/home/hyy/clickhouse-repro-offline/minimal-db-20261009-RdkwYD/build-final/database-cli-fixtures" "-P" "/home/hyy/clickhouse-repro-offline/minimal-db-20261009-RdkwYD/source/tests/database_cli.cmake"
+6: Working Directory: /home/hyy/clickhouse-repro-offline/minimal-db-20261009-RdkwYD/build-final
+6: Test timeout computed to be: 120
+6: -- PASS database CLI lifecycle, fresh processes, failures, script and stdin
+6/6 Test #6: database_cli .....................   Passed    0.06 sec
+
+100% tests passed, 0 tests failed out of 6
+
+Total Test time (real) =   0.41 sec

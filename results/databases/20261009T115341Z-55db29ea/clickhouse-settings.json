@@ -1,0 +1,30 @@
+[
+  [
+    "count_distinct_implementation",
+    "uniqExact"
+  ],
+  [
+    "log_queries",
+    "1"
+  ],
+  [
+    "max_execution_time",
+    "60"
+  ],
+  [
+    "max_insert_threads",
+    "2"
+  ],
+  [
+    "max_memory_usage",
+    "3221225472"
+  ],
+  [
+    "max_threads",
+    "2"
+  ],
+  [
+    "use_query_cache",
+    "0"
+  ]
+]

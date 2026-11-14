@@ -1,0 +1,25 @@
+{
+  "extension": "minimal-columnar-database",
+  "build_type": "Release",
+  "compiler": "GNU C++ 13.3.0",
+  "standard": "C++17",
+  "warnings": ["-Wall", "-Wextra", "-Wpedantic", "-Werror"],
+  "work_directory": "/home/hyy/clickhouse-repro-offline/minimal-db-20261009-RdkwYD",
+  "build_directory": "/home/hyy/clickhouse-repro-offline/minimal-db-20261009-RdkwYD/build-final",
+  "source_provenance": "unversioned source snapshot with source-sha256.txt",
+  "ctest": {"passed": 6, "total": 6},
+  "original_cli_regressions": {"passed": 3, "total": 3},
+  "e1_runner_regressions": {"passed": 4, "total": 4},
+  "skeleton_predicates": 404,
+  "skeleton_checks": ["independent_input_oracle", "full_index_sql_parity", "explain_execution_scan_parity", "separate_process_reload", "cli_lifecycle", "invalid_input_and_publication"],
+  "preserved_artifacts": {
+    "e1": {"suite": "20261009T112101Z-178093fc", "validator": "passed", "configurations": 24, "measurements": 240, "warmups": 48},
+    "e2_e3": {"suite": "20261009T120932Z-b23db388", "validator": "passed", "native_queries": 4, "cross_system_queries": 43, "successful_states": 387}
+  },
+  "performance_claim": null,
+  "demo": {"matched_rows": 1, "sum": 10, "index_scanned_rows": 2, "full_scanned_rows": 4, "explain_candidate_groups": 1},
+  "pre_extension_repair": "Approved backup and removal of duplicate legacy sections in store.hpp, CMakeLists.txt and component README",
+  "crlf_regression": "Shared TSV reader accepts LF and CRLF; C++ reload and CLI fixtures exercise CRLF",
+  "initial_attempts": "Initial build and test logs and failed-demo catalog retained in the work directory; final verification uses fresh build and catalog paths",
+  "database_containers_started": false
+}

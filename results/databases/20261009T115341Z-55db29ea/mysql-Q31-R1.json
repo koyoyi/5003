@@ -1,0 +1,126 @@
+{
+  "record": {
+    "status": "validation_failed",
+    "elapsed_s": null,
+    "observed_elapsed_s": 0.9547826869998062,
+    "server_elapsed_s": null,
+    "exit_code": 1,
+    "result_rows": 10,
+    "validation_status": "failed",
+    "error": "No validated three-system reference or result mismatch",
+    "server_query_id": null,
+    "cancellation": null
+  },
+  "result": [
+    [
+      2,
+      1124827693,
+      180,
+      {
+        "decimal": "90"
+      },
+      {
+        "decimal": "1734.0889"
+      }
+    ],
+    [
+      2,
+      1090700661,
+      72,
+      {
+        "decimal": "34"
+      },
+      {
+        "decimal": "1410.3333"
+      }
+    ],
+    [
+      2,
+      1600523122,
+      55,
+      {
+        "decimal": "21"
+      },
+      {
+        "decimal": "1368.0000"
+      }
+    ],
+    [
+      2,
+      1388696273,
+      54,
+      {
+        "decimal": "27"
+      },
+      {
+        "decimal": "1893.3704"
+      }
+    ],
+    [
+      89,
+      1608608493,
+      53,
+      {
+        "decimal": "23"
+      },
+      {
+        "decimal": "1368.0000"
+      }
+    ],
+    [
+      2,
+      2117869668,
+      47,
+      {
+        "decimal": "19"
+      },
+      {
+        "decimal": "1638.0000"
+      }
+    ],
+    [
+      2,
+      1294197925,
+      46,
+      {
+        "decimal": "24"
+      },
+      {
+        "decimal": "1638.0000"
+      }
+    ],
+    [
+      2,
+      -1319697794,
+      44,
+      {
+        "decimal": "22"
+      },
+      {
+        "decimal": "1714.9091"
+      }
+    ],
+    [
+      2,
+      711074589,
+      44,
+      {
+        "decimal": "22"
+      },
+      {
+        "decimal": "1750.0000"
+      }
+    ],
+    [
+      2,
+      1332033259,
+      44,
+      {
+        "decimal": "22"
+      },
+      {
+        "decimal": "1368.0000"
+      }
+    ]
+  ]
+}

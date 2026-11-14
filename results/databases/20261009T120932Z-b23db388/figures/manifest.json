@@ -1,0 +1,10 @@
+{
+  "source": {
+    "hot.csv": "ee1c7ee0150ae03ec0f9063153ccaeeaabab87860d30b261ec9944b68d6f289d",
+    "native-validation/queries.csv": "5f061d6e9ff841e1eb7361ee791947a105074d8a7484a5e8c6220a73d79f3039"
+  },
+  "figures": {
+    "clickbench-hot.svg": "ce44eada19a9c1e7703368de369ebc72ef3d2c6f302505ba81fcfdcabab759d9",
+    "native-read-rows.svg": "83b54be45b2d1fd21a4e9abbdaa615e29a7f7538ae55c9c4f419b0f67cfb7d4a"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "record": {
+    "status": "validation_failed",
+    "elapsed_s": null,
+    "observed_elapsed_s": 0.006147339999870383,
+    "server_elapsed_s": 0.004491908,
+    "exit_code": 1,
+    "result_rows": 1,
+    "validation_status": "failed",
+    "error": "No validated three-system reference or result mismatch",
+    "server_query_id": "3479c012-99e0-461b-af40-f0da38ce31e4",
+    "cancellation": null
+  },
+  "result": [
+    [
+      80778,
+      1000000,
+      1604.08959
+    ]
+  ]
+}

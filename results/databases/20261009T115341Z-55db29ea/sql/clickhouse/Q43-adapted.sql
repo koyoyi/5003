@@ -1,0 +1,1 @@
+SELECT dateTrunc('minute', EventTime) AS M, COUNT(*) AS PageViews FROM hits WHERE CounterID = 62 AND EventDate >= '2013-07-14' AND EventDate <= '2013-07-15' AND IsRefresh = 0 AND DontCountHits = 0 GROUP BY dateTrunc('minute', EventTime) ORDER BY dateTrunc('minute', EventTime) LIMIT 10 OFFSET 1000;

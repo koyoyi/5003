@@ -1,0 +1,19 @@
+{
+  "record": {
+    "status": "success",
+    "elapsed_s": 0.03726797100000567,
+    "observed_elapsed_s": 0.03726797100000567,
+    "server_elapsed_s": 0.033293569,
+    "exit_code": 0,
+    "result_rows": 1,
+    "validation_status": "passed",
+    "error": "",
+    "server_query_id": "54a847e8-3e86-4e53-926b-67da63f6f884",
+    "cancellation": null
+  },
+  "result": [
+    [
+      95
+    ]
+  ]
+}

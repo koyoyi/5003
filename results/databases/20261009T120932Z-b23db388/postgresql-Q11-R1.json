@@ -1,0 +1,56 @@
+{
+  "record": {
+    "status": "success",
+    "elapsed_s": 0.1520255529999872,
+    "observed_elapsed_s": 0.1520255529999872,
+    "server_elapsed_s": null,
+    "exit_code": 0,
+    "result_rows": 10,
+    "validation_status": "passed",
+    "error": "",
+    "server_query_id": null,
+    "cancellation": null
+  },
+  "result": [
+    [
+      "iPad",
+      2303
+    ],
+    [
+      "iPhone",
+      107
+    ],
+    [
+      "A500",
+      34
+    ],
+    [
+      "GT-P7300B",
+      12
+    ],
+    [
+      "N8-00",
+      12
+    ],
+    [
+      "iPho",
+      11
+    ],
+    [
+      "3110000",
+      6
+    ],
+    [
+      "IQ245Plus",
+      5
+    ],
+    [
+      "eagle75",
+      4
+    ],
+    [
+      "GT-S5830",
+      3
+    ]
+  ]
+}

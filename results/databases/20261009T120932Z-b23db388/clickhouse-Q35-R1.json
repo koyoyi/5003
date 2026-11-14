@@ -1,0 +1,66 @@
+{
+  "record": {
+    "status": "success",
+    "elapsed_s": 0.11852681200002735,
+    "observed_elapsed_s": 0.11852681200002735,
+    "server_elapsed_s": 0.107460481,
+    "exit_code": 0,
+    "result_rows": 10,
+    "validation_status": "passed",
+    "error": "",
+    "server_query_id": "ca8b5496-cbb9-49c1-ba8a-10b50538d977",
+    "cancellation": null
+  },
+  "result": [
+    [
+      1,
+      "http://irr.ru/index.php?showalbum/login-leniya7777294,938303130",
+      58976
+    ],
+    [
+      1,
+      "http://komme%2F27.0.1453.116",
+      29585
+    ],
+    [
+      1,
+      "https://produkty%2Fproduct",
+      11464
+    ],
+    [
+      1,
+      "http://irr.ru/index.php?showalbum/login-kapusta-advert2668]=0&order_by=0",
+      10480
+    ],
+    [
+      1,
+      "http://irr.ru/index.php?showalbum/login-kapustic/product_name",
+      10128
+    ],
+    [
+      1,
+      "http://irr.ru/index.php",
+      7758
+    ],
+    [
+      1,
+      "https://produkty%2F",
+      6649
+    ],
+    [
+      1,
+      "http://irr.ru/index.php?showalbum/login",
+      6141
+    ],
+    [
+      1,
+      "https://produkty/kurortmag",
+      5764
+    ],
+    [
+      1,
+      "https://produkty%2Fpulove.ru/album/login",
+      5495
+    ]
+  ]
+}

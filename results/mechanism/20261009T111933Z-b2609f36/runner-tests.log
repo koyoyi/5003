@@ -1,0 +1,9 @@
+test_frozen_intervals (test_mechanism.MechanismTests.test_frozen_intervals) ... ok
+test_generator_reproducibility_and_oracle (test_mechanism.MechanismTests.test_generator_reproducibility_and_oracle) ... ok
+test_sample_shape_and_failures (test_mechanism.MechanismTests.test_sample_shape_and_failures) ... ok
+test_summary_requires_complete_measurements (test_mechanism.MechanismTests.test_summary_requires_complete_measurements) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.011s
+
+OK

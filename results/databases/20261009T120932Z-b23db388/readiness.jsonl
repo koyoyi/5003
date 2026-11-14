@@ -1,0 +1,6 @@
+{"dbms": "clickhouse", "readiness_error": "Error ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer')) executing HTTP request attempt 2 (http://127.0.0.1:18123)"}
+{"dbms": "postgresql", "readiness_error": "connection failed: connection to server at \"127.0.0.1\", port 15432 failed: server closed the connection unexpectedly\n\tThis probably means the server terminated abnormally\n\tbefore or while processing the request."}
+{"dbms": "mysql", "readiness_error": "(2013, 'Lost connection to MySQL server during query')"}
+{"dbms": "clickhouse", "readiness_error": "Error ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer')) executing HTTP request attempt 2 (http://127.0.0.1:18123)"}
+{"dbms": "postgresql", "readiness_error": "connection failed: connection to server at \"127.0.0.1\", port 15432 failed: server closed the connection unexpectedly\n\tThis probably means the server terminated abnormally\n\tbefore or while processing the request."}
+{"dbms": "mysql", "readiness_error": "(2013, 'Lost connection to MySQL server during query')"}

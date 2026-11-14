@@ -1,0 +1,26 @@
+[
+  [
+    "TimeZone",
+    "UTC"
+  ],
+  [
+    "jit",
+    "off"
+  ],
+  [
+    "max_parallel_workers_per_gather",
+    "2"
+  ],
+  [
+    "shared_buffers",
+    "65536"
+  ],
+  [
+    "statement_timeout",
+    "60000"
+  ],
+  [
+    "work_mem",
+    "65536"
+  ]
+]

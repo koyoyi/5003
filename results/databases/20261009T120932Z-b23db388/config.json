@@ -1,0 +1,25 @@
+{
+  "clickbench_commit": "0e662eafd608343698a2f63cd84d0d878eefbc7b",
+  "images": {
+    "clickhouse": "clickhouse/clickhouse-server:24.6.1.4423",
+    "postgresql": "postgres:16.6-bookworm",
+    "mysql": "mysql:8.0.40"
+  },
+  "cpu_limit": 2,
+  "memory_bytes": 4294967296,
+  "timeout_s": 60,
+  "runs": 3,
+  "float_relative_tolerance": 1e-09,
+  "float_absolute_tolerance": 1e-06,
+  "mysql_div_precision_increment": 12,
+  "ports": {
+    "clickhouse": 18123,
+    "postgresql": 15432,
+    "mysql": 13306
+  },
+  "cache_protocol": "first_run then two repeat_run; OS caches not cleared; validation queries run before timing",
+  "timing_scope": "persistent-client-request-to-complete-decoded-result; no docker-exec or process-start in timing",
+  "data_url": "https://datasets.clickhouse.com/hits_compatible/athena_partitioned/hits_0.parquet",
+  "data_file": "hits_0.parquet",
+  "query_variant": "deterministic-ties-and-dialect-normalization-v2"
+}

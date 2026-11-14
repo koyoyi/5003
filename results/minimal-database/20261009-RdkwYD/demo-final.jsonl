@@ -1,0 +1,7 @@
+{"created":"demo"}
+{"imported":"demo"}
+{"tables":["demo"]}
+{"table":"demo","schema":{"row_id":"UInt64","key":"Int64","value":"Int64"},"state":"ready","rows":4,"granule":2,"groups":2}
+{"table":"demo","access":"sparse_index","predicate":"eq","lower":9,"upper":9,"total_groups":2,"candidate_groups":1,"begin_row":2,"end_row":4,"estimated_scanned_rows":2,"requested_read_bytes":48}
+{"count":1,"sum":10,"scanned_rows":2,"requested_read_bytes":48,"elapsed_s":9.0580000000000004e-06}
+{"count":1,"sum":10,"scanned_rows":4,"requested_read_bytes":96,"elapsed_s":4.2250000000000002e-06}

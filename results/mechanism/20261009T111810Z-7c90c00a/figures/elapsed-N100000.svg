@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="410" viewBox="0 0 900 410">
+<rect width="900" height="410" fill="white"/>
+<g font-family="sans-serif" font-size="13" fill="#222">
+<text x="60" y="28" font-size="18">N=100000: median query elapsed time</text>
+<text x="30" y="55">milliseconds</text>
+<path d="M90 75V320H600" stroke="#222" fill="none"/>
+<text x="10" y="324.0">0</text>
+<path d="M90 320.0H600" stroke="#ddd" fill="none"/>
+<text x="10" y="275.0">0.266</text>
+<path d="M90 271.0H600" stroke="#ddd" fill="none"/>
+<text x="10" y="226.0">0.533</text>
+<path d="M90 222.0H600" stroke="#ddd" fill="none"/>
+<text x="10" y="177.0">0.799</text>
+<path d="M90 173.0H600" stroke="#ddd" fill="none"/>
+<text x="10" y="128.0">1.07</text>
+<path d="M90 124.0H600" stroke="#ddd" fill="none"/>
+<text x="10" y="79.0">1.33</text>
+<path d="M90 75.0H600" stroke="#ddd" fill="none"/>
+<text x="75.0" y="345">0.1%</text>
+<text x="245.0" y="345">1%</text>
+<text x="415.0" y="345">10%</text>
+<text x="585.0" y="345">100%</text>
+<polyline points="90.0,165.9 260.0,158.2 430.0,159.8 600.0,138.7" stroke="#1665a8" stroke-width="2" fill="none"/>
+<circle cx="90.0" cy="165.9" r="3" fill="#1665a8"/>
+<circle cx="260.0" cy="158.2" r="3" fill="#1665a8"/>
+<circle cx="430.0" cy="159.8" r="3" fill="#1665a8"/>
+<circle cx="600.0" cy="138.7" r="3" fill="#1665a8"/>
+<text x="625" y="85" fill="#1665a8">full_scan G=512</text>
+<polyline points="90.0,318.7 260.0,317.9 430.0,302.9 600.0,140.7" stroke="#d35400" stroke-width="2" fill="none"/>
+<circle cx="90.0" cy="318.7" r="3" fill="#d35400"/>
+<circle cx="260.0" cy="317.9" r="3" fill="#d35400"/>
+<circle cx="430.0" cy="302.9" r="3" fill="#d35400"/>
+<circle cx="600.0" cy="140.7" r="3" fill="#d35400"/>
+<text x="625" y="110" fill="#d35400">sparse_index G=512</text>
+<polyline points="90.0,135.8 260.0,124.0 430.0,136.2 600.0,97.3" stroke="#228833" stroke-width="2" fill="none"/>
+<circle cx="90.0" cy="135.8" r="3" fill="#228833"/>
+<circle cx="260.0" cy="124.0" r="3" fill="#228833"/>
+<circle cx="430.0" cy="136.2" r="3" fill="#228833"/>
+<circle cx="600.0" cy="97.3" r="3" fill="#228833"/>
+<text x="625" y="135" fill="#228833">full_scan G=2048</text>
+<polyline points="90.0,316.6 260.0,316.6 430.0,298.5 600.0,104.7" stroke="#993399" stroke-width="2" fill="none"/>
+<circle cx="90.0" cy="316.6" r="3" fill="#993399"/>
+<circle cx="260.0" cy="316.6" r="3" fill="#993399"/>
+<circle cx="430.0" cy="298.5" r="3" fill="#993399"/>
+<circle cx="600.0" cy="104.7" r="3" fill="#993399"/>
+<text x="625" y="160" fill="#993399">sparse_index G=2048</text>
+<polyline points="90.0,156.5 260.0,148.9 430.0,133.2 600.0,127.2" stroke="#555555" stroke-width="2" fill="none"/>
+<circle cx="90.0" cy="156.5" r="3" fill="#555555"/>
+<circle cx="260.0" cy="148.9" r="3" fill="#555555"/>
+<circle cx="430.0" cy="133.2" r="3" fill="#555555"/>
+<circle cx="600.0" cy="127.2" r="3" fill="#555555"/>
+<text x="625" y="185" fill="#555555">full_scan G=8192</text>
+<polyline points="90.0,308.0 260.0,307.0 430.0,294.4 600.0,123.6" stroke="#c0392b" stroke-width="2" fill="none"/>
+<circle cx="90.0" cy="308.0" r="3" fill="#c0392b"/>
+<circle cx="260.0" cy="307.0" r="3" fill="#c0392b"/>
+<circle cx="430.0" cy="294.4" r="3" fill="#c0392b"/>
+<circle cx="600.0" cy="123.6" r="3" fill="#c0392b"/>
+<text x="625" y="210" fill="#c0392b">sparse_index G=8192</text>
+<text x="90" y="390">Warm-cache local protocol; logical reads, not physical disk I/O.</text>
+</g></svg>

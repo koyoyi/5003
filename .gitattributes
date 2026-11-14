@@ -1,2 +1,12 @@
-# Auto detect text files and perform LF normalization
+# Normalize source files; keep historical experiment bytes and their hashes intact.
 * text=auto
+*.cpp text eol=lf
+*.hpp text eol=lf
+*.py text eol=lf
+*.md text eol=lf
+*.cmake text eol=lf
+CMakeLists.txt text eol=lf
+*.sql text eol=lf
+*.tsv text eol=lf
+results/** -text
+reproduction-info/** -text

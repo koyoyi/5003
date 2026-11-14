@@ -1,0 +1,56 @@
+{
+  "record": {
+    "status": "success",
+    "elapsed_s": 0.6491757560000337,
+    "observed_elapsed_s": 0.6491757560000337,
+    "server_elapsed_s": null,
+    "exit_code": 0,
+    "result_rows": 10,
+    "validation_status": "passed",
+    "error": "",
+    "server_query_id": null,
+    "cancellation": null
+  },
+  "result": [
+    [
+      229,
+      27961
+    ],
+    [
+      2,
+      10413
+    ],
+    [
+      208,
+      3073
+    ],
+    [
+      1,
+      1720
+    ],
+    [
+      34,
+      1428
+    ],
+    [
+      158,
+      1110
+    ],
+    [
+      184,
+      987
+    ],
+    [
+      107,
+      966
+    ],
+    [
+      42,
+      956
+    ],
+    [
+      47,
+      943
+    ]
+  ]
+}

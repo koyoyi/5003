@@ -1,0 +1,12 @@
+Expression ((Project names + Projection))
+  Aggregating
+    Expression (Before GROUP BY)
+      Expression
+        ReadFromMergeTree (mechanism.rows)
+        Indexes:
+          PrimaryKey
+            Keys: 
+              key
+            Condition: and((key in (-Inf, 247499]), (key in [0, +Inf)))
+            Parts: 1/1
+            Granules: 121/123

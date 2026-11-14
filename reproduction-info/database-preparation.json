@@ -1,0 +1,63 @@
+{
+  "preparation_requires_network": true,
+  "experiment_execution_uses_local_images_and_data": true,
+  "failed_attempts": [
+    {
+      "suite_id": "20261009T114409Z-f1bce022",
+      "stage": "isolated-clickhouse-startup",
+      "status": "failed-before-benchmark",
+      "evidence": "BackgroundSchedulePool could not obtain 512 threads; the experimental container PID limit is 512.",
+      "resolution": "Explicitly reduce background scheduling pools and cap the global thread pool in configs/clickhouse-limited.xml.",
+      "formal_clickbench_records": 0
+    },
+    {
+      "suite_id": "20261009T115100Z-8242501d",
+      "stage": "clickhouse-100000-row-import-integrity",
+      "status": "failed-before-benchmark",
+      "evidence": "Every timestamp in the inspected rows was shifted by -8 hours. WSL local offset is +08:00; the driver calls timestamp() on naive datetime values.",
+      "resolution": "Attach timezone.utc to canonical naive UTC datetime values before ClickHouse insertion; regression checks epoch second 1373834327.",
+      "e2_queries_validated": 4,
+      "formal_clickbench_records": 0
+    }
+  ],
+  "completed_suites_with_validation_failures": [
+    {
+      "suite_id": "20261009T115341Z-55db29ea",
+      "status_records": 387,
+      "successful_records": 324,
+      "validated_queries": 36,
+      "total_queries": 43,
+      "failed_query_ids": [3, 4, 10, 23, 28, 29, 31],
+      "verified_input": "Full-row and all-105-column fingerprints matched in all three systems, at both 100000 and 1000000 rows.",
+      "diagnosed_differences": [
+        "MySQL default four-decimal AVG precision fails the pre-frozen tolerance; set div_precision_increment=12 instead of relaxing tolerance.",
+        "ClickHouse 24.6 AVG(Int64 UserID) overflows its accumulator; explicitly cast to Float64.",
+        "Q23 needs deterministic SearchPhrase tie ordering; Q22 receives the same complete tie handling.",
+        "PostgreSQL and RE2/ICU default dot/newline behavior differs on Referer; specify (?s) consistently."
+      ],
+      "failed_main_times": null,
+      "results_retained": true
+    }
+  ],
+  "failed_attempts_retained_under": "~/clickhouse-repro-offline/db-suites",
+  "verified_final_suite": {
+    "suite_id": "20261009T120932Z-b23db388",
+    "e2_queries_validated": 4,
+    "e3_queries_validated": 43,
+    "successful_records": 387,
+    "total_records": 387,
+    "dataset_rows": 1000000,
+    "dataset_columns": 105,
+    "native_timeout_probe_s": {
+      "clickhouse": 1.038,
+      "postgresql": 1.001,
+      "mysql": 1.002
+    },
+    "all_timed_out_probe_queries_terminated": true,
+    "figures_regenerated_byte_for_byte": true,
+    "original_container_evidence_unchanged": true
+  },
+  "original_container": "clickhouse-repro",
+  "original_container_modified": false,
+  "credentials_policy": "Random local mode-0600 env files in Linux suite directories; never included in project results."
+}

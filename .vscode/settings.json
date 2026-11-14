@@ -1,0 +1,16 @@
+{
+  "files.encoding": "utf8",
+  "files.eol": "\n",
+  "cmake.sourceDirectory": "${workspaceFolder}",
+  "cmake.useCMakePresets": "always",
+  "C_Cpp.default.compileCommands": "${workspaceFolder}/build/native-release/compile_commands.json",
+  "python.analysis.extraPaths": ["${workspaceFolder}/scripts"],
+  "files.watcherExclude": {
+    "**/build/**": true,
+    "**/mini-index/build*/**": true
+  },
+  "search.exclude": {
+    "**/build/**": true,
+    "**/mini-index/build*/**": true
+  }
+}

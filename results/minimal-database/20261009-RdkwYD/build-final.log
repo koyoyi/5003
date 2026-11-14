@@ -1,0 +1,15 @@
+[ 10%] Building CXX object CMakeFiles/offline_tests.dir/tests/offline_tests.cpp.o
+[ 20%] Building CXX object CMakeFiles/mini_index.dir/src/main.cpp.o
+[ 30%] Linking CXX executable mini_index
+[ 30%] Built target mini_index
+[ 40%] Building CXX object CMakeFiles/failure_tests.dir/tests/failure_tests.cpp.o
+[ 50%] Linking CXX executable offline_tests
+[ 50%] Built target offline_tests
+[ 60%] Building CXX object CMakeFiles/mini_db.dir/src/database_main.cpp.o
+[ 70%] Linking CXX executable failure_tests
+[ 70%] Built target failure_tests
+[ 80%] Building CXX object CMakeFiles/database_tests.dir/tests/database_tests.cpp.o
+[ 90%] Linking CXX executable mini_db
+[ 90%] Built target mini_db
+[100%] Linking CXX executable database_tests
+[100%] Built target database_tests
